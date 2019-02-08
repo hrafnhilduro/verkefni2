@@ -1,0 +1,197 @@
+<%- include('header') -%>
+
+<form class="container" method="post" action="/register">
+  <div class="top title">
+    <h1>Atvinnuumsókn</h1>
+  </div>
+  <div class="inputs">
+    <div class="top">
+      <label class="labels" for="name">Nafn</label>
+      <% if (redError.includes("name")) { %>
+      <input class="inputbox error" id="name" name="name" value="<%= name %>" />
+      <% } else { %>
+      <input class="inputbox" id="name" name="name" value="<%= name %>" />
+      <% } %>
+    </div>
+    <div class="top">
+      <label class="labels" for="email">Netfang</label>
+      <% if (redError.includes("email")) { %>
+      <input
+        class="inputbox error"
+        id="email"
+        name="email"
+        value="<%= email %>"
+      />
+      <% } else { %>
+      <input class="inputbox" id="email" name="email" value="<%= email %>" />
+      <% } %>
+    </div>
+    <div class="top">
+      <label class="labels" for="phonenumber">Sími</label>
+      <% if (redError.includes("phonenumber")) { %>
+      <input
+        class="inputbox error"
+        id="phonenumber"
+        name="phonenumber"
+        value="<%= phonenumber %>"
+      />
+      <% } else { %>
+      <input
+        class="inputbox"
+        id="phonenumber"
+        name="phonenumber"
+        value="<%= phonenumber %>"
+      />
+      <% } %>
+    </div>
+    <div class="top present">
+      <label class="labels" for="pres">Kynning á þér:</label>
+      <% if (redError.includes("pres")) { %>
+      <textarea
+        class="inputbox error pres"
+        id="pres"
+        name="pres"
+        value="<%= pres %>"
+      >
+      </textarea>
+      <% } else { %>
+      <textarea class="inputbox pres" id="pres" name="pres" value="<%= pres %>">
+      </textarea>
+      <% } %>
+    </div>
+  </div>
+  <div class="title2">
+    <h2>Starf sem sótt er um:</h2>
+  </div>
+  <% if (redError.includes("job")) { %>
+  <div class="radioButton error">
+    <div class="rad">
+      <% if (job == "Forritari") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Forritari"
+        checked
+      />
+      <p>Forritari</p>
+      <% } else { %>
+      <input class="singleRadBut" type="radio" name="job" value="Forritari" />
+      <p>Forritari</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="radioButton error">
+    <div class="rad">
+      <% if (job == "Hönnuður") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Hönnuður"
+        checked
+      />
+      <p>Hönnuður</p>
+      <% } else { %>
+      <input class="singleRadBut" type="radio" name="job" value="Hönnuður" />
+      <p>Hönnuður</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="radioButton error">
+    <div class="rad">
+      <% if (job == "Verkefnastjóri") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Verkefnastjóri"
+        checked
+      />
+      <p>Verkefnastjóri</p>
+      <% } else { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Verkefnastjóri"
+      />
+      <p>Verkefnastjóri</p>
+      <% } %>
+    </div>
+  </div>
+  <% } else { %>
+  <div class="radioButton">
+    <div class="rad">
+      <% if (job == "Forritari") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Forritari"
+        checked
+      />
+      <p>Forritari</p>
+      <% } else { %>
+      <input class="singleRadBut" type="radio" name="job" value="Forritari" />
+      <p>Forritari</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="radioButton">
+    <div class="rad">
+      <% if (job == "Hönnuður") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Hönnuður"
+        checked
+      />
+      <p>Hönnuður</p>
+      <% } else { %>
+      <input class="singleRadBut" type="radio" name="job" value="Hönnuður" />
+      <p>Hönnuður</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="radioButton">
+    <div class="rad">
+      <% if (job == "Verkefnastjóri") { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Verkefnastjóri"
+        checked
+      />
+      <p>Verkefnastjóri</p>
+      <% } else { %>
+      <input
+        class="singleRadBut"
+        type="radio"
+        name="job"
+        value="Verkefnastjóri"
+      />
+      <p>Verkefnastjóri</p>
+      <% } %>
+    </div>
+  </div>
+  <% } %>
+  <div class="errors">
+    <% if (errors.length !== 0) { %>
+    <h2>Vandræði við að senda inn umsókn</h2>
+    <% } %>
+    <ul>
+      <% errors.forEach((error) => { %>
+      <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  </div>
+  <button>Senda Umsókn</button>
+</form>
+<a class="bottomlink" href="/applications" class="but" >
+  <button>Umsóknasíða</button>
+</a>
+
+<%- include('footer') -%>

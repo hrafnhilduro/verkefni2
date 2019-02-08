@@ -11,6 +11,193 @@
 
 html {
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }
 
-/* todo útfæra útlit */
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+p {
+  font-size: 1em;
+  padding: 8px;
+}
+
+button {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  width: 100px;
+  height: 100%;
+  min-height: 30px;
+}
+
+button:hover {
+  transition-timing-function: ease-in;
+
+  /* Quick on the way out */
+  transition: 0.3s;
+  background: #bbb;
+  /* Hide thing by pushing it outside by default */
+}
+
+body {
+  margin: 32px;
+}
+
+label {
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.container > div {
+  padding-bottom: 20px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 16px 0px 16px 0px;
+}
+
+.title2 {
+  margin-top: 32px;
+}
+
+.inputbox {
+  border: 1px solid #888;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.labels {
+  width: 200px;
+  font-size: 1.375rem;
+}
+
+.radioButton {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0px 5px 0px;
+  border-radius: 4px;
+  margin-left: -10px;
+  padding-left: 10px;
+}
+
+.rad {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.singleRadBut {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.pres {
+  height: 80px;
+}
+
+.errors > h2 {
+  padding: 20px 0px 20px 0px;
+}
+
+.applist {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.appbuttons {
+  width: 100%;
+  /* height: 200px; */
+}
+
+.appsingle {
+  margin-bottom: 60px;
+}
+
+.appname {
+  padding: 10px 0px 10px 0px;
+}
+
+.appbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apppres {
+  padding: 10px 0px 10px 0px;
+  font-size: 1rem;
+}
+
+.error {
+  background-color: #fbb;
+  border: 1px solid #855;
+}
+
+.success {
+  font-size: 3rem;
+}
+
+.successDiv {
+  height: 300px;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.but {
+  margin-top: 20px;
+}
+
+.bottomlink {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 400px) {
+  .top {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+  }
+  .pres {
+    height: 100px;
+  }
+  .present {
+    height: 100px;
+  }
+}

@@ -1,0 +1,41 @@
+<%- include('header') -%>
+
+    <div class="applist">
+        <h1>Atvinnuumsóknir</h1>
+        <% appList.forEach((app) => { %>
+        <div class="appsingle">
+            <div class="appname">
+                <h2><%= app.name %></h2>
+            </div>
+            <div>
+                <a href=""> <%= app.email %> </a>
+            </div>
+            <div>
+                <p>Sími: <%= app.phonenumber %></p>
+            </div>
+            <div>
+                <p>Umsókn send: <%= app.created.toISOString() %></p>
+            </div>
+            <div class="apppres">
+                <p><%= app.presentation %></p>
+            </div>
+            <div class="appbuttons">
+                <% if (!app.processed) { %>
+                    <form method="post" action=/applications/processed/<%= app.id %>>
+                        <button type="submit" name="name" value="<%=app.id%>">Vinna umsókn</button>
+                    </form>
+                <% } else { %>
+                        <p>&#x2714; Umsókn unnin <%= app.updated.toISOString() %></p>
+                <% } %>
+                <form method="post" action=/applications/remove/<%= app.id %>>
+                    <button type="submit" name="name" value="<%=app.id%>">Eyða umsókn</button>
+                </form>
+            </div>
+        </div>
+        <% }) %>
+        <a href="/">
+            <button class="extraButtons">Til baka</button>
+        </a>
+    </div>
+
+<%- include('footer') -%>
